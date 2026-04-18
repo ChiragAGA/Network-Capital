@@ -18,8 +18,8 @@ export function createServerSupabase() {
       cookies: {
         get(name: string) {
           return cookieStore.get(name)?.value;
-        }
-      }
+        },
+      },
     }
   );
 }
