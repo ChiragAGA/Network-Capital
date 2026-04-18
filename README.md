@@ -1,47 +1,84 @@
-# Network Capital (Phase 2)
+Network Capital (Phase 2)
 
-## 🚀 Setup
+🚀 Setup Guide
 
-### 1. Supabase
-- Create project
-- Run `database.sql`
-- Enable Google Auth
+1. Supabase
 
-### 2. Env
-Create `.env.local`
+Create a new Supabase project.
 
-NEXT_PUBLIC_SUPABASE_URL=...
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+Run the provided database.sql file to initialize schema.
 
----
+Enable Google Auth in the Supabase Authentication settings.
 
-### 3. Run locally
+2. Environment Variables
+
+Create a .env.local file at the root of your Next.js project:
+
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+
+Important: Only use the anon key here. The service role key must never be exposed in client code.
+
+3. Local Development
+
+Install dependencies:
+
 npm install
+
+Start the dev server:
+
 npm run dev
 
----
+4. Deployment
 
-### 4. Deploy
-- Push to GitHub
-- Import in Vercel
+Push your code to GitHub.
 
----
+Import the repository into Vercel.
 
-### 📱 Add to iPhone
-- Open site in Safari
-- Share → Add to Home Screen
+Add the same environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY) in Vercel Project Settings → Environment Variables.
 
----
+Trigger a redeploy to ensure Vercel installs fresh dependencies.
 
-## 🔍 Features
+5. Testing
 
-- Search by:
-  - Name
-  - Company
-  - Skills
-  - Qualifications
-  - Hometown
-  - City
+Sign up with Google.
 
-- Contact CRUD
-- Dashboard basics
+Add a contact.
+
+Verify dashboard loads and CRUD operations work.
+
+6. iPhone Shortcut
+
+Open the deployed site in Safari.
+
+Tap Share → Add to Home Screen.
+
+🔍 Features
+
+Search by:
+
+Name
+
+Company
+
+Skills
+
+Qualifications
+
+Hometown
+
+City
+
+Core functionality:
+
+Contact CRUD (Create, Read, Update, Delete)
+
+Dashboard basics
+
+⚠️ Notes
+
+If dependencies change, delete and regenerate the lockfile (package-lock.json or yarn.lock) to avoid stale packages.
+
+Ensure all imports use @/lib/supabase instead of deprecated auth-helpers.
+
+Keep environment variables consistent between local and Vercel.
