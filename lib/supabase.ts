@@ -1,5 +1,6 @@
 import { createBrowserClient, createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { createBrowserClient } from "@supabase/ssr";
 
 // Client-side (browser) Supabase instance
 export function createClient() {
