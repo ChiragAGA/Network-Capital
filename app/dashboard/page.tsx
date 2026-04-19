@@ -1,7 +1,7 @@
 import { createServerSupabase } from "@/lib/supabase-server";
 
 export default async function Dashboard() {
-const supabase = await createServerSupabase();
+  const supabase = await createServerSupabase();
 
   const { data: contacts } = await supabase.from("contacts").select("*");
 
@@ -27,3 +27,4 @@ const supabase = await createServerSupabase();
       </div>
     </div>
   );
+}
