@@ -1,7 +1,7 @@
-import { createServerSupabase } from "@/lib/supabase";
+import { createServerSupabase } from "@/lib/supabase-server";
 
 export default async function ContactPage({ params }: any) {
-  const supabase = createServerSupabase();
+    const supabase = await createServerSupabase();
 
   const { data } = await supabase
     .from("contacts")

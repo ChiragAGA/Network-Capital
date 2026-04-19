@@ -79,6 +79,6 @@ Dashboard basics
 
 If dependencies change, delete and regenerate the lockfile (package-lock.json or yarn.lock) to avoid stale packages.
 
-Ensure all imports use @/lib/supabase instead of deprecated auth-helpers.
+Use @/lib/supabase for browser/client usage and @/lib/supabase-server for server components.
 
 Keep environment variables consistent between local and Vercel.
